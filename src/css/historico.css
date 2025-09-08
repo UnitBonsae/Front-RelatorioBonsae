@@ -1,0 +1,52 @@
+/* html {
+  font-size: 62.5%;
+} */
+
+h3 {
+  margin: 0;
+}
+
+.card {
+  position: relative;
+}
+
+.card {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card__svg {
+  position: absolute;
+  left: 5px;
+  top: 22px;
+  color: rgb(84, 84, 84);
+  /* background-color: #1161d8; */
+  border-radius: 50%;
+  padding: 5px;
+}
+.card__history {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.card__history p {
+  margin-top: 0;
+}
+
+th,
+td {
+  padding: 0.75rem 0.75rem;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.card__title{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+}
+

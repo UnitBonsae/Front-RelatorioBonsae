@@ -2,7 +2,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-image: url("/src/assets/img/background.jpeg");
+  background-image: url('/src/assets/img/background.jpeg');
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -19,6 +19,7 @@ header {
 img {
   display: block;
   margin: 0 auto 1rem;
+  
 }
 
 main {
@@ -32,12 +33,12 @@ main {
   border-radius: 8px;
   padding: 1.5rem;
   margin-bottom: 2rem;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 h3 {
-  margin-top: 0;
-  color: #1161d8;
+    margin-top: 0;
+    color: #1161d8;
 }
 
 form {
@@ -51,8 +52,7 @@ label {
   font-weight: bold;
 }
 
-select,
-button {
+select, button {
   padding: 0.5rem;
   border: 1px solid #ccc;
   border-radius: 6px;
@@ -63,10 +63,35 @@ button {
   color: white;
   cursor: pointer;
   transition: background 0.3s;
+  
 }
 
 button:hover {
   background: darkblue;
+}
+
+.link_historico{
+  color: rgb(93, 92, 92);
+  cursor: pointer;
+  padding:  1rem 0.5rem 0rem 0.5rem;
+  text-align: end;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.link_historico:hover{
+  color: rgba(93, 92, 92, 0.722);
+}
+.card__bottom{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.card__part{
+  display: flex;
+      gap: 1rem;
 }
 
 table {
@@ -74,8 +99,7 @@ table {
   border-collapse: collapse;
 }
 
-th,
-td {
+th, td {
   padding: 0.75rem;
   border-bottom: 1px solid #ddd;
   text-align: left;
@@ -85,18 +109,10 @@ td {
   font-weight: bold;
 }
 
-.status.queued {
-  color: gray;
-}
-.status.running {
-  color: orange;
-}
-.status.succeeded {
-  color: green;
-}
-.status.failed {
-  color: red;
-}
+.status.queued { color: gray; }
+.status.running { color: orange; }
+.status.succeeded { color: green; }
+.status.failed { color: red; }
 
 a.download {
   text-decoration: none;
