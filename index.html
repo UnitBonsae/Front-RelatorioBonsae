@@ -1,57 +1,74 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Painel de Relatórios - Bonsae</title>
-  <link rel="stylesheet" href="src/css/style.css">
-</head>
-<body>
-  <header>
-    <img src="src/assets/img/logo bonsae.png" alt="Logo da Bonsae" width="100">
-    <h1> Painel de Relatórios</h1>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Painel de Relatórios - Bonsae</title>
 
-  <main>
-    <!-- Formulário de criação -->
-    <section class="card">
-      <h3>Gerar Relatório</h3>
-      <form id="reportForm">
-        <label for="reportType">Tipo de Relatório:</label>
-        <select id="reportType" name="reportType" required>
-          <option value="alunos">Alunos</option>
-          <option value="matriculas">Matrículas</option>
-        </select>
+    <link
+      rel="icon"
+      href="src/assets/img/icon_bonsae.png"
+      sizes="32x32"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="src/css/style.css" />
+  </head>
+  <body>
+    <header>
+      <img
+        src="src/assets/img/logo bonsae.png"
+        alt="Logo da Bonsae"
+        width="100"
+      />
+      <h1>Painel de Relatórios</h1>
+    </header>
 
-        <label for="output">Formato:</label>
-        <select id="output" name="output">
-          <option value="xlsx">Excel (.xlsx)</option>
-          <option value="pdf">PDF</option>
-        </select>
+    <main>
+      <!-- Formulário de criação -->
+      <section class="card">
+        <h3>Gerar Relatório</h3>
+        <form id="reportForm">
+          <label for="reportType">Tipo de Relatório:</label>
+          <select id="reportType" name="reportType" required>
+            <option value="alunos">Alunos</option>
+            <option value="matriculas">Matrículas</option>
+          </select>
 
-        <button type="submit">Criar Relatório</button>
-      </form>
-    </section>
+          <label for="output">Formato:</label>
+          <div class="card__bottom">
+            <div class="card__part">
+              <select id="output" name="output">
+                <option value="xlsx">Excel (.xlsx)</option>
+                <option value="pdf">PDF</option>
+              </select>
+              <button type="submit">Criar Relatório</button>
+            </div>
+            <a class="link_historico" href="src/pages/historico.html"
+              >Histórico</a
+            >
+          </div>
+        </form>
+      </section>
 
-    <!-- Lista de relatórios -->
-    <section class="card">
-      <h3>Relatórios Solicitados</h3>
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Status</th>
-            <th>Mensagem</th>
-            <th>Ações</th>
-          </tr>
-        </thead>
-        <tbody id="reportList">
-          <!-- Relatórios renderizados via JS -->
-        </tbody>
-      </table>
-    </section>
-  </main>
+      <!-- Lista de relatórios -->
+      <section class="card">
+        <h3>Relatórios Solicitados</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Status</th>
+              <th>Mensagem</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody id="reportList">
+            <!-- Relatórios renderizados via JS -->
+          </tbody>
+        </table>
+      </section>
+    </main>
 
-  <script src="src/js/app.js"></script>
-</body>
+    <script src="src/js/app.js"></script>
+  </body>
 </html>
