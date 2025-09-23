@@ -1,29 +1,27 @@
-const UL = 'https://localhost:7293/api/SolicitacaoRelatorio';
+const URLsolicitacao = "https://localhost:7293/api/SolicitacaoRelatorio";
 
 // Função para chamar a API e preencher a tabela
 async function chamarAPI() {
-  
-    // Chama a API e obtém os dados
-  const resp = await fetch(UL); 
+  // Chama a API e obtém os dados
+  const resp = await fetch(URLsolicitacao);
 
-  if(resp.status === 200) {
+  if (resp.status === 200) {
     // Converte a resposta para JSON
     const lista = await resp.json();
     console.log(lista);
     preencherTabela(lista);
   }
-  
 }
-chamarAPI()
+chamarAPI();
 
 // Função para preencher a tabela com os dados da API
 function preencherTabela(relatorio) {
-  const tabela = document.querySelector('#tabelaHistorico tbody');
-  tabela.innerHTML = '';
+  const tabela = document.querySelector("#tabelaHistorico tbody");
+  tabela.innerHTML = "";
 
-//   Adiciona uma linha para cada item no array
-  relatorio.forEach(item => {
-    const row = document.createElement('tr');
+  //   Adiciona uma linha para cada item no array
+  relatorio.forEach((item) => {
+    const row = document.createElement("tr");
     row.innerHTML = `
       <td>${new Date(item.dataSolicitacao).toLocaleDateString()}</td>
       <td>${item.tipoRelatorio}</td>
@@ -34,13 +32,12 @@ function preencherTabela(relatorio) {
     `;
     tabela.appendChild(row);
   });
-
 }
 
 // Função para baixar o relatório
 async function baixarRelatorio(id) {
   const urlDownload = `https://localhost:7293/api/RelatorioGerado/por-id-solicitacao?Id=${id}`;
-  const resp = await fetch(urlDownload); 
+  const resp = await fetch(urlDownload);
   if (resp.status === 200) {
     const dados = await resp.json();
     console.log(dados);
@@ -58,7 +55,7 @@ function converterBase64(Tipo, Base64, nomeArquivo = null) {
   const fileName = nomeArquivo ? nomeArquivo : `relatorio.${extensao}`;
 
   // Converte base64 em bytes
-  const bytes = Uint8Array.from(atob(Base64), c => c.charCodeAt(0));
+  const bytes = Uint8Array.from(atob(Base64), (c) => c.charCodeAt(0));
 
   // Cria o Blob
   const blob = new Blob([bytes]);
