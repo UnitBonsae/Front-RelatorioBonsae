@@ -28,11 +28,8 @@
       <section class="card">
         <h3>Gerar Relatório</h3>
         <form id="reportForm">
-          <label for="reportType">Tipo de Relatório:</label>
-          <select id="reportType" name="reportType" required>
-            <option value="alunos">Alunos</option>
-            <option value="matriculas">Matrículas</option>
-          </select>
+          <label for="idTurma">ID da Turma:</label>
+          <input type="number" id="idTurma" name="idTurma" required />
 
           <label for="output">Formato:</label>
           <div class="card__bottom">
@@ -56,8 +53,8 @@
         <table>
           <thead>
             <tr>
-              <th>ID</th>
-              <th>Status</th>
+              <th>Data</th>
+              <th>Tipo</th>
               <th>Mensagem</th>
               <th>Ações</th>
             </tr>
