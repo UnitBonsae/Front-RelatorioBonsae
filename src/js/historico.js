@@ -14,6 +14,18 @@ async function chamarAPI() {
 }
 chamarAPI();
 
+// Converte idTurma em letra
+function idTurmaParaLetra(id) {
+  switch (id) {
+    case 1: return "A";
+    case 2: return "B";
+    case 3: return "C";
+    default: return "-";
+  }
+}
+
+
+
 // Função para preencher a tabela com os dados da API
 function preencherTabela(relatorio) {
   const tabela = document.querySelector("#tabelaHistorico tbody");
@@ -25,7 +37,7 @@ function preencherTabela(relatorio) {
     row.innerHTML = `
       <td>${new Date(item.dataSolicitacao).toLocaleDateString()}</td>
       <td>${item.tipoRelatorio}</td>
-      <td>${item.turmaId}</td>
+      <td>${idTurmaParaLetra(item.turmaId)}</td>
       <td>
         <button onclick="baixarRelatorio(${item.id})">Baixar</button>
       </td>
