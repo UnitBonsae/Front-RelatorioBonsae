@@ -28,8 +28,11 @@
       <section class="card">
         <h3>Gerar Relatório</h3>
         <form id="reportForm">
-          <label for="idTurma">ID da Turma:</label>
-          <input type="number" id="idTurma" name="idTurma" required />
+          <label for="idTurma">Escolha sua Turma:</label>
+          <select name="idTurma" id="idTurma">
+            <option value="1">Turma A</option>
+          </select>
+          <!-- <input type="number" id="idTurma" name="idTurma" required /> -->
 
           <label for="output">Formato:</label>
           <div class="card__bottom">
@@ -55,7 +58,7 @@
             <tr>
               <th>Data</th>
               <th>Tipo</th>
-              <th>Mensagem</th>
+              <th>Turma</th>
               <th>Ações</th>
             </tr>
           </thead>
