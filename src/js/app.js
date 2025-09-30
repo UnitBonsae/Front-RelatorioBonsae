@@ -93,7 +93,7 @@ function acompanharRelatorio(relatorio) {
       relatorio.mensagem = erro.message;
       renderizarRelatorios();
     }
-  }, 20000); // checa a cada 20 segundos
+  }, 2000); // checa a cada 2 segundos
 }
 
 // --- Função para baixar relatório pelo ID ---
