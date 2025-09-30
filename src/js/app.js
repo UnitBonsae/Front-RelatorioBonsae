@@ -71,7 +71,7 @@ function acompanharRelatorio(relatorio) {
 
       relatorio.status = atual.status;
 
-      if (atual.status === "Gerado") {
+      if (atual.status === "Concluido") {
         clearInterval(intervaloId);
 
         const respostaArquivo = await fetch(
