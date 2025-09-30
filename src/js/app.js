@@ -157,7 +157,7 @@ function renderizarRelatorios() {
 
     // Botão de download ou mensagem
     const acaoHTML =
-      r.status === "Gerado"
+      r.status === "Concluido"
         ? `<button onclick="baixarRelatorio(${r.id})">Baixar</button>`
         : r.mensagem;
 
