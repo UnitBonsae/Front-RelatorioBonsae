@@ -15,6 +15,8 @@ formulario.addEventListener("submit", async (evento) => {
   const idTurma = parseInt(document.getElementById("idTurma").value, 10);
   const formatoSaida = document.getElementById("output").value;
   const tipoRelatorioNumero = formatoSaida === "xlsx" ? 1 : 2;
+  const saidaDetalhamento = document.getElementById("outputRelatorio").value;
+  const relatorio_detalhado = saidaDetalhamento === "true"? true : false;
 
   const relatorio = {
     idTurma,
@@ -25,6 +27,7 @@ formulario.addEventListener("submit", async (evento) => {
     urlDownload: null,
     nomeArquivo: null,
     dataSolicitacao: null,
+    relatorio_detalhado: true,
   };
 
   relatorios.push(relatorio);
@@ -79,7 +82,7 @@ function acompanharRelatorio(relatorio) {
         );
         const dadosArquivo = await respostaArquivo.json();
 
-        relatorio.urlDownload = dadosArquivo.conteudoArquivo; // base64
+        relatorio.urlDownload = dadosArquivo.conteudoArquivo; 
         relatorio.nomeArquivo = dadosArquivo.nomeArquivo;
         relatorio.mensagem = "Pronto para baixar";
       } else {
