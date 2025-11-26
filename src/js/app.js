@@ -16,7 +16,7 @@ formulario.addEventListener("submit", async (evento) => {
   const formatoSaida = document.getElementById("output").value;
   const tipoRelatorioNumero = formatoSaida === "xlsx" ? 1 : 2;
   const saidaDetalhamento = document.getElementById("outputRelatorio").value;
-  const relatorio_detalhado = saidaDetalhamento === "true"? true : false;
+  const relatorioDetalhado = saidaDetalhamento === "true"? true : false;
 
   const relatorio = {
     idTurma,
@@ -27,7 +27,7 @@ formulario.addEventListener("submit", async (evento) => {
     urlDownload: null,
     nomeArquivo: null,
     dataSolicitacao: null,
-    relatorio_detalhado: true,
+    relatorioDetalhado: relatorioDetalhado,
   };
 
   relatorios.push(relatorio);
@@ -38,7 +38,7 @@ formulario.addEventListener("submit", async (evento) => {
     const resposta = await fetch(URL_BASE, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ idTurma, tipoRelatorio: tipoRelatorioNumero }),
+      body: JSON.stringify({ idTurma, tipoRelatorio: tipoRelatorioNumero, relatorioDetalhado: relatorioDetalhado }),
     });
     if (!resposta.ok) throw new Error("Erro ao enviar solicitação");
 
