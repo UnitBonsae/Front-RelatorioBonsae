@@ -13,17 +13,17 @@ h3 {
 .card {
   background: white;
   border-radius: 8px;
-  padding: 1.5rem 2rem;
+  padding: 1.5rem 3rem;
   margin-bottom: 2rem;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .card__svg {
   position: absolute;
-  left: 5px;
-  top: 22px;
-  color: rgb(84, 84, 84);
-  /* background-color: #1161d8; */
+  left: 10px;
+  top: 24px;
+  color: #1161d8;
+  background-color: white;
   border-radius: 50%;
   padding: 5px;
 }

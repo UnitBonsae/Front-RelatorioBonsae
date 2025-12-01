@@ -23,7 +23,7 @@ img {
 }
 
 main {
-  max-width: 900px;
+  max-width: 950px;
   margin: 2rem auto;
   padding: 0 1rem;
 }
@@ -39,9 +39,10 @@ main {
 h3 {
     margin-top: 0;
     color: #1161d8;
+    font-size: 20px;
 }
 
-form {
+#reportForm {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
@@ -50,23 +51,40 @@ form {
 label {
   width: 100%;
   font-weight: bold;
+  font-size: 16px;
 }
 
-select, button {
+.select, .button_submit, button {
   padding: 0.5rem;
   border: 1px solid #ccc;
   border-radius: 6px;
+  font-size: 16px;
 }
 
-button {
+.select{
+  width: 150px;
+}
+.button_submit, button {
   background: #1161d8;
-  color: white;
+  color: rgba(255, 255, 255, 0.863);
   cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  padding: 0.5rem 0.7rem;
   transition: background 0.3s;
-  
+  text-align: center; 
 }
 
-button:hover {
+.dowload{
+  color: white;
+}
+table {
+  border-collapse: separate;
+  border-spacing: 10px; /* espaço horizontal e vertical */
+}
+
+.button_submit:hover {
   background: darkblue;
 }
 

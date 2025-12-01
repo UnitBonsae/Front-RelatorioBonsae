@@ -29,7 +29,8 @@
         <h3>Gerar Relatório</h3>
         <form id="reportForm">
           <label for="idTurma">Escolha sua Turma:</label>
-          <select name="idTurma" id="idTurma">
+          <select class="select" name="idTurma" id="idTurma">
+            
             <option value="1">Turma A</option>
           </select>
           <!-- <input type="number" id="idTurma" name="idTurma" required /> -->
@@ -37,15 +38,15 @@
           <label for="output">Formato:</label>
           <div class="card__bottom">
             <div class="card__part">
-              <select id="output" name="output">
+              <select class="select" id="output" name="output">
                 <option value="xlsx">Excel (.xlsx)</option>
                 <option value="pdf">PDF</option>
               </select>
-              <select id="outputRelatorio" name="outputRelatorio">
-                <option value=true>Detalhado</option>
-                <option value="false">Normal</option>
+              <select class="select" id="outputRelatorio" name="outputRelatorio">
+                <option value=true>Detalhada</option>
+                <option value="false">Resumida</option>
               </select>
-              <button type="submit">Criar Relatório</button>
+              <button class="button_submit" type="submit">SOLICITAR</button>
             </div>
             <a class="link_historico" href="src/pages/historico.html"
               >Histórico</a
@@ -63,6 +64,7 @@
               <th>Data</th>
               <th>Tipo</th>
               <th>Turma</th>
+              <th>Exibição</th>
               <th>Ações</th>
             </tr>
           </thead>

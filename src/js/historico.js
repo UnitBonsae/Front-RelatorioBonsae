@@ -31,6 +31,14 @@ function preencherTabela(relatorio) {
   const tabela = document.querySelector("#tabelaHistorico tbody");
   tabela.innerHTML = "";
 
+// Função para tipo de Detalhamento
+  function tipoDetalhamento(tipo) {
+    if(tipo==true){
+      return "Detalhada";
+    } else {
+      return "Resumida";
+    }
+  }
   //   Adiciona uma linha para cada item no array
   relatorio.forEach((item) => {
     const row = document.createElement("tr");
@@ -38,8 +46,9 @@ function preencherTabela(relatorio) {
       <td>${new Date(item.dataSolicitacao).toLocaleDateString()}</td>
       <td>${item.tipoRelatorio}</td>
       <td>${idTurmaParaLetra(item.turmaId)}</td>
+      <td>${tipoDetalhamento(item.relatorioDetalhado)}</td>
       <td>
-        <button onclick="baixarRelatorio(${item.id})">Baixar</button>
+        <button class="dowload" onclick="baixarRelatorio(${item.id})">Baixar</button>
       </td>
     `;
     tabela.appendChild(row);

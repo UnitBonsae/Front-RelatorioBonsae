@@ -165,16 +165,26 @@ function renderizarRelatorios() {
       }
     }
 
+// Função para tipo de Detalhamento
+  function tipoDetalhamento(tipo) {
+    if(tipo==true){
+      return "Detalhada";
+    } else {
+      return "Resumida";
+    }
+  }
+
     // Botão de download ou mensagem
     const acaoHTML =
       r.status === "Concluido"
-        ? `<button onclick="baixarRelatorio(${r.id})">Baixar</button>`
+        ? `<button class="dowload" onclick="baixarRelatorio(${r.id})">Baixar</button>`
         : r.mensagem;
 
     linha.innerHTML = `
       <td>${dataFormatada}</td>
       <td>${r.tipoRelatorio === 1 ? "Excel (.xlsx)" : "PDF"}</td>
       <td>${idTurmaParaLetra(r.idTurma)}</td>
+      <td>${tipoDetalhamento(r.relatorioDetalhado)}</td>
       <td>${acaoHTML}</td>
     `;
 
